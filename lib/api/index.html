@@ -1,0 +1,59 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Nightmare Glitch</title>
+	<style>
+		body {
+			background-color: #000;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			height: 100vh;
+			margin: 0;
+		}
+		
+		.glitch {
+			color: blue;
+			font-size: 48px;
+			font-family: Arial, sans-serif;
+			text-align: center;
+			position: relative;
+		}
+		
+		.glitch::before {
+			content: attr(data-text);
+			position: absolute;
+			top: 0;
+			left: 0;
+			color: red;
+			text-shadow: 2px 2px #000;
+			animation: glitch 2s infinite;
+		}
+		
+		@keyframes glitch {
+			0% {
+				transform: translateX(0);
+			}
+			20% {
+				transform: translateX(-5px);
+			}
+			40% {
+				transform: translateX(5px);
+			}
+			60% {
+				transform: translateX(-3px);
+			}
+			80% {
+				transform: translateX(3px);
+			}
+			100% {
+				transform: translateX(0);
+			}
+		}
+	</style>
+</head>
+<body>
+	<h1 class="glitch" data-text="NIGHTMARE">NIGHTMARE</h1>
+</body>
+</html>
